@@ -235,7 +235,7 @@ function WhyUs() {
             <Fade key={i} delay={i * .1}>
               <div className="group relative p-8 h-full border transition-all duration-500 hover:-translate-y-1 hover:shadow-xl cursor-pointer" style={{ backgroundColor: "#fff", borderColor: `${C.gold}15`, borderRadius: "16px" }}
                 onMouseEnter={e => (e.currentTarget.style.borderColor = `${C.gold}50`)} onMouseLeave={e => (e.currentTarget.style.borderColor = `${C.gold}15`)}>
-                <div className="text-5xl font-light mb-6 select-none" style={{ fontFamily: FONT_D, color: C.gold, opacity: .1 }} aria-hidden="true">{v.num}</div>
+                <div className="mb-5 select-none" style={{ fontFamily: FONT_D, fontSize: "3rem", fontWeight: 700, lineHeight: 1, color: C.gold, textShadow: `0 0 30px ${C.gold}40` }}>{v.num}</div>
                 <div className="w-10 h-10 flex items-center justify-center mb-5 text-lg" style={{ backgroundColor: `${C.gold}10`, color: C.gold, borderRadius: "8px" }}>{v.ico}</div>
                 <h3 style={{ fontFamily: FONT_D, fontSize: "1.3rem", fontWeight: 500, color: C.charcoal, marginBottom: 10 }}>{v.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: C.taupe, fontFamily: FONT_B, fontWeight: 300 }}>{v.desc}</p>
