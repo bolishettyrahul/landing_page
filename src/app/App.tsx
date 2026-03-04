@@ -135,7 +135,7 @@ function Navbar() {
         </ul>
 
         {/* CTA */}
-        <a href="#contact" className="hidden lg:inline-flex items-center gap-2 text-white text-[13px] px-6 py-2.5 tracking-wide hover:brightness-110 transition-all" style={{ backgroundColor: C.gold, fontFamily: FONT_B, fontWeight: 500 }}>Book Consultation</a>
+        <a href="#contact" className="hidden lg:inline-flex items-center gap-2 text-white text-[13px] px-6 py-2.5 tracking-wide hover:brightness-110 transition-all" style={{ backgroundColor: C.gold, fontFamily: FONT_B, fontWeight: 500, borderRadius: "8px" }}>Book Consultation</a>
 
         {/* Mobile toggle */}
         <button className="lg:hidden text-white p-2" onClick={() => setOpen(!open)} aria-label="Toggle menu">
@@ -151,7 +151,7 @@ function Navbar() {
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} className="lg:hidden overflow-hidden" style={{ backgroundColor: C.deep }}>
             <div className="px-6 py-5 border-t border-white/10">
               {links.map(l => <a key={l.label} href={l.href} className="block text-white/80 hover:text-white py-2.5 text-sm" onClick={() => setOpen(false)} style={{ fontFamily: FONT_B }}>{l.label}</a>)}
-              <a href="#contact" className="mt-4 inline-block text-white text-sm px-6 py-2.5" style={{ backgroundColor: C.gold, fontFamily: FONT_B, fontWeight: 500 }} onClick={() => setOpen(false)}>Book Consultation</a>
+              <a href="#contact" className="mt-4 inline-block text-white text-sm px-6 py-2.5" style={{ backgroundColor: C.gold, fontFamily: FONT_B, fontWeight: 500, borderRadius: "8px" }} onClick={() => setOpen(false)}>Book Consultation</a>
             </div>
           </motion.div>
         )}
@@ -179,13 +179,6 @@ function Hero() {
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .2 }}>
-          <span className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full mb-8" style={{ border: `1px solid ${C.gold}40`, backdropFilter: "blur(8px)", backgroundColor: `${C.gold}14` }}>
-            <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: C.gold }} />
-            <span className="text-xs tracking-[.2em] uppercase" style={{ color: C.goldLight, fontFamily: FONT_B }}>Free 3D Design Consultation</span>
-          </span>
-        </motion.div>
-
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .9, delay: .4 }} className="text-white mb-6" style={{ fontFamily: FONT_D, fontSize: "clamp(2.4rem,5.5vw,4.5rem)", lineHeight: 1.1, fontWeight: 400 }}>
           Crafting Refined Interiors<br />for Modern{" "}
           <span className="relative inline-block" style={{ color: C.gold, fontStyle: "italic" }}>
@@ -199,11 +192,11 @@ function Hero() {
         </motion.p>
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .8 }} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#contact" className="group inline-flex items-center gap-3 text-white px-8 py-4 text-sm tracking-wide hover:brightness-110 hover:shadow-xl transition-all" style={{ backgroundColor: C.gold, fontFamily: FONT_B, fontWeight: 500, boxShadow: `0 8px 30px ${C.gold}30` }}>
-            Book Free 3D Design Consultation
+          <a href="#contact" className="group inline-flex items-center gap-3 text-white px-8 py-4 text-sm tracking-wide hover:brightness-110 hover:shadow-xl transition-all" style={{ backgroundColor: C.gold, fontFamily: FONT_B, fontWeight: 500, boxShadow: `0 8px 30px ${C.gold}30`, borderRadius: "10px" }}>
+            Book a Consultation
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
           </a>
-          <a href="#projects" className="inline-flex items-center gap-3 text-white/90 px-8 py-4 text-sm tracking-wide hover:bg-white/10 backdrop-blur-sm transition-all" style={{ border: "1px solid rgba(255,255,255,.25)", fontFamily: FONT_B }}>View Our Projects</a>
+          <a href="#projects" className="inline-flex items-center gap-3 text-white/90 px-8 py-4 text-sm tracking-wide hover:bg-white/10 backdrop-blur-sm transition-all" style={{ border: "1px solid rgba(255,255,255,.25)", fontFamily: FONT_B, borderRadius: "10px" }}>View Our Projects</a>
         </motion.div>
 
         {/* Scroll mouse */}
@@ -240,10 +233,10 @@ function WhyUs() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {items.map((v, i) => (
             <Fade key={i} delay={i * .1}>
-              <div className="group relative p-8 h-full border transition-all duration-500 hover:-translate-y-1 hover:shadow-xl cursor-pointer" style={{ backgroundColor: "#fff", borderColor: `${C.gold}15` }}
+              <div className="group relative p-8 h-full border transition-all duration-500 hover:-translate-y-1 hover:shadow-xl cursor-pointer" style={{ backgroundColor: "#fff", borderColor: `${C.gold}15`, borderRadius: "16px" }}
                 onMouseEnter={e => (e.currentTarget.style.borderColor = `${C.gold}50`)} onMouseLeave={e => (e.currentTarget.style.borderColor = `${C.gold}15`)}>
                 <div className="text-5xl font-light mb-6 select-none" style={{ fontFamily: FONT_D, color: C.gold, opacity: .1 }} aria-hidden="true">{v.num}</div>
-                <div className="w-10 h-10 flex items-center justify-center mb-5 text-lg" style={{ backgroundColor: `${C.gold}10`, color: C.gold }}>{v.ico}</div>
+                <div className="w-10 h-10 flex items-center justify-center mb-5 text-lg" style={{ backgroundColor: `${C.gold}10`, color: C.gold, borderRadius: "8px" }}>{v.ico}</div>
                 <h3 style={{ fontFamily: FONT_D, fontSize: "1.3rem", fontWeight: 500, color: C.charcoal, marginBottom: 10 }}>{v.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: C.taupe, fontFamily: FONT_B, fontWeight: 300 }}>{v.desc}</p>
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-500" style={{ backgroundColor: C.gold }} />
@@ -269,8 +262,8 @@ function About() {
           {/* Image */}
           <Fade>
             <div className="relative">
-              <div className="overflow-hidden shadow-2xl"><img src={imgAbout} alt="AptInterio luxury interior design project in Hyderabad" className="w-full h-[500px] object-cover" loading="lazy" /></div>
-              <motion.div initial={{ opacity: 0, scale: .9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="absolute -bottom-6 -right-4 px-7 py-5 shadow-xl" style={{ backgroundColor: C.gold }}>
+              <div className="overflow-hidden shadow-2xl" style={{ borderRadius: "16px" }}><img src={imgAbout} alt="AptInterio luxury interior design project in Hyderabad" className="w-full h-[500px] object-cover" loading="lazy" /></div>
+              <motion.div initial={{ opacity: 0, scale: .9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="absolute -bottom-6 -right-4 px-7 py-5 shadow-xl" style={{ backgroundColor: C.gold, borderRadius: "12px" }}>
                 <div className="text-white text-3xl" style={{ fontFamily: FONT_D, fontWeight: 600 }}>15+</div>
                 <div className="text-white/80 text-xs tracking-wider mt-1" style={{ fontFamily: FONT_B }}>Years of Excellence</div>
               </motion.div>
@@ -293,7 +286,7 @@ function About() {
               </p>
               <div className="grid grid-cols-2 gap-3 mb-8">
                 {caps.map((c, i) => (
-                  <div key={i} className="flex items-center gap-3 px-4 py-3" style={{ backgroundColor: "#fff", border: `1px solid ${C.gold}20` }}>
+                  <div key={i} className="flex items-center gap-3 px-4 py-3" style={{ backgroundColor: "#fff", border: `1px solid ${C.gold}20`, borderRadius: "8px" }}>
                     <span className="w-2 h-2 rounded-full" style={{ backgroundColor: C.gold }} />
                     <span className="text-sm" style={{ color: C.charcoal, fontFamily: FONT_B, fontWeight: 400 }}>{c}</span>
                   </div>
@@ -378,9 +371,9 @@ function Services() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {svc.map((s, i) => (
             <Fade key={i} delay={i * .05}>
-              <div className="group relative p-6 border transition-all duration-400 hover:shadow-lg hover:-translate-y-0.5 cursor-pointer h-full" style={{ borderColor: `${C.gold}12` }}
+              <div className="group relative p-6 border transition-all duration-400 hover:shadow-lg hover:-translate-y-0.5 cursor-pointer h-full" style={{ borderColor: `${C.gold}12`, borderRadius: "16px" }}
                 onMouseEnter={e => (e.currentTarget.style.borderColor = `${C.gold}50`)} onMouseLeave={e => (e.currentTarget.style.borderColor = `${C.gold}12`)}>
-                <div className="w-14 h-14 flex items-center justify-center mb-5 transition-colors" style={{ backgroundColor: `${C.gold}08`, color: C.gold }}>{s.ico}</div>
+                <div className="w-14 h-14 flex items-center justify-center mb-5 transition-colors" style={{ backgroundColor: `${C.gold}08`, color: C.gold, borderRadius: "12px" }}>{s.ico}</div>
                 <h3 style={{ fontFamily: FONT_D, fontSize: "1.15rem", fontWeight: 500, color: C.charcoal, marginBottom: 10 }}>{s.t}</h3>
                 <p className="text-[13px] leading-relaxed" style={{ color: C.taupe, fontFamily: FONT_B, fontWeight: 300 }}>{s.d}</p>
                 <span className="block mt-5 w-5 h-px group-hover:w-10 transition-all duration-400" style={{ backgroundColor: C.gold }} />
@@ -419,7 +412,7 @@ function Projects() {
           <Heading>Featured Projects</Heading>
           <div className="flex items-center justify-center gap-3 mt-8">
             {["All", "Residential", "Commercial"].map(x => (
-              <button key={x} onClick={() => setF(x)} className="px-6 py-2 text-sm tracking-wide transition-all" style={{ backgroundColor: f === x ? C.gold : "#fff", color: f === x ? "#fff" : C.taupe, border: `1px solid ${f === x ? C.gold : C.beige}`, fontFamily: FONT_B, fontWeight: f === x ? 500 : 400 }}>{x}</button>
+              <button key={x} onClick={() => setF(x)} className="px-6 py-2 text-sm tracking-wide transition-all" style={{ backgroundColor: f === x ? C.gold : "#fff", color: f === x ? "#fff" : C.taupe, border: `1px solid ${f === x ? C.gold : C.beige}`, fontFamily: FONT_B, fontWeight: f === x ? 500 : 400, borderRadius: "8px" }}>{x}</button>
             ))}
           </div>
         </Fade>
@@ -427,7 +420,7 @@ function Projects() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <AnimatePresence mode="popLayout">
             {shown.map(p => (
-              <motion.div key={p.title} layout initial={{ opacity: 0, scale: .95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: .95 }} transition={{ duration: .4 }} className="group relative overflow-hidden cursor-pointer" style={{ boxShadow: "0 4px 20px rgba(0,0,0,.08)" }}>
+              <motion.div key={p.title} layout initial={{ opacity: 0, scale: .95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: .95 }} transition={{ duration: .4 }} className="group relative overflow-hidden cursor-pointer" style={{ boxShadow: "0 4px 20px rgba(0,0,0,.08)", borderRadius: "14px" }}>
                 <img src={p.img} alt={`${p.title} interior design in ${p.loc} by AptInterio`} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ background: `linear-gradient(to top,${C.deep}cc,transparent 60%)` }} />
                 <div className="absolute bottom-0 inset-x-0 p-5 translate-y-2 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
@@ -441,7 +434,7 @@ function Projects() {
 
         <Fade className="text-center mt-12">
           <a href="#contact" className="inline-flex items-center gap-2 px-8 py-3 text-sm tracking-wide transition-all hover:shadow-lg"
-            style={{ border: `1px solid ${C.gold}`, color: C.gold, fontFamily: FONT_B, fontWeight: 500 }}
+            style={{ border: `1px solid ${C.gold}`, color: C.gold, fontFamily: FONT_B, fontWeight: 500, borderRadius: "8px" }}
             onMouseEnter={e => { e.currentTarget.style.backgroundColor = C.gold; e.currentTarget.style.color = "#fff"; }}
             onMouseLeave={e => { e.currentTarget.style.backgroundColor = "transparent"; e.currentTarget.style.color = C.gold; }}>
             View All Projects {Arrow}
@@ -471,7 +464,7 @@ function Cta() {
           <p className="max-w-lg mx-auto mb-10 leading-relaxed" style={{ color: "rgba(255,255,255,.6)", fontFamily: FONT_B, fontSize: ".95rem", fontWeight: 300 }}>
             Let AptInterio bring your vision to life. Book a complimentary design consultation and take the first step towards your dream interior.
           </p>
-          <a href="#contact" className="inline-flex items-center gap-2 text-white px-10 py-4 text-sm tracking-wide hover:brightness-110 transition-all" style={{ backgroundColor: C.gold, fontFamily: FONT_B, fontWeight: 500, boxShadow: `0 8px 30px ${C.gold}30` }}>Start Your Journey</a>
+          <a href="#contact" className="inline-flex items-center gap-2 text-white px-10 py-4 text-sm tracking-wide hover:brightness-110 transition-all" style={{ backgroundColor: C.gold, fontFamily: FONT_B, fontWeight: 500, boxShadow: `0 8px 30px ${C.gold}30`, borderRadius: "10px" }}>Start Your Journey</a>
         </Fade>
       </div>
     </section>
@@ -501,7 +494,7 @@ function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {data.map((t, i) => (
             <Fade key={i} delay={i * .1}>
-              <div className="relative p-8 border h-full flex flex-col hover:shadow-lg transition-shadow" style={{ backgroundColor: C.warmWhite, borderColor: `${C.gold}12` }}>
+              <div className="relative p-8 border h-full flex flex-col hover:shadow-lg transition-shadow" style={{ backgroundColor: C.warmWhite, borderColor: `${C.gold}12`, borderRadius: "16px" }}>
                 <div className="absolute top-6 right-6 opacity-[.06]">
                   <svg width="40" height="36" viewBox="0 0 40 36" fill={C.charcoal}><path d="M0 21.6c0-4.4 1.1-8.2 3.3-11.3C5.5 7.2 8.6 4.4 12.7 2L16 6c-2.7 1.6-4.7 3.3-6 5.1-1.3 1.8-2 3.6-2 5.4h5.6V36H0V21.6zm22.4 0c0-4.4 1.1-8.2 3.3-11.3 2.2-3.1 5.3-5.9 9.3-8.3l3.3 4c-2.7 1.6-4.7 3.3-6 5.1-1.3 1.8-2 3.6-2 5.4H36V36H22.4V21.6z" /></svg>
                 </div>
@@ -544,7 +537,7 @@ function Locations() {
           {areas.map((a, i) => (
             <Fade key={i} delay={i * .04}>
               <a href={`#loc-${a.toLowerCase().replace(/\s/g, "-")}`} className="group block p-5 border transition-all hover:-translate-y-0.5"
-                style={{ borderColor: "rgba(255,255,255,.08)", backgroundColor: "rgba(255,255,255,.03)" }}
+                style={{ borderColor: "rgba(255,255,255,.08)", backgroundColor: "rgba(255,255,255,.03)", borderRadius: "12px" }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = `${C.gold}50`; e.currentTarget.style.backgroundColor = `${C.gold}08`; }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,.08)"; e.currentTarget.style.backgroundColor = "rgba(255,255,255,.03)"; }}
                 title={`Best interior designers in ${a}`}>
@@ -584,13 +577,13 @@ function Blog() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {posts.map((b, i) => (
             <Fade key={i} delay={i * .1}>
-              <article className="group overflow-hidden border h-full flex flex-col hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer" style={{ backgroundColor: "#fff", borderColor: `${C.gold}12` }}>
+              <article className="group overflow-hidden border h-full flex flex-col hover:shadow-lg hover:-translate-y-0.5 transition-all cursor-pointer" style={{ backgroundColor: "#fff", borderColor: `${C.gold}12`, borderRadius: "16px" }}>
                 <div className="overflow-hidden">
                   <img src={b.img} alt={b.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-xs tracking-wider uppercase px-2 py-1" style={{ backgroundColor: `${C.gold}12`, color: C.gold, fontFamily: FONT_B, fontWeight: 500 }}>{b.cat}</span>
+                    <span className="text-xs tracking-wider uppercase px-2 py-1" style={{ backgroundColor: `${C.gold}12`, color: C.gold, fontFamily: FONT_B, fontWeight: 500, borderRadius: "4px" }}>{b.cat}</span>
                     <span className="text-xs" style={{ color: C.textLight, fontFamily: FONT_B }}>{b.date}</span>
                   </div>
                   <h3 className="mb-3" style={{ fontFamily: FONT_D, fontSize: "1.15rem", fontWeight: 500, color: C.charcoal, lineHeight: 1.3 }}>{b.title}</h3>
@@ -613,7 +606,7 @@ function Contact() {
   const [sent, setSent] = useState(false);
   const handle = (e: React.FormEvent) => { e.preventDefault(); setSent(true); setTimeout(() => setSent(false), 4000); };
 
-  const inp: CSSProperties = { fontFamily: FONT_B, fontSize: ".875rem", padding: "12px 16px", border: `1px solid ${C.beige}`, backgroundColor: "#fff", color: C.charcoal, outline: "none", width: "100%", transition: "border-color .3s" };
+  const inp: CSSProperties = { fontFamily: FONT_B, fontSize: ".875rem", padding: "12px 16px", border: `1px solid ${C.beige}`, backgroundColor: "#fff", color: C.charcoal, outline: "none", width: "100%", transition: "border-color .3s", borderRadius: "8px" };
   const lbl: CSSProperties = { fontFamily: FONT_B, fontSize: ".7rem", fontWeight: 500, color: C.taupe, letterSpacing: ".06em", textTransform: "uppercase", marginBottom: 6, display: "block" };
 
   const locs = ["Kokapet", "Gachibowli", "Narsingi", "Kollur", "Tellapur", "Manikonda", "Lingampally", "Alkapur Township", "Other"];
@@ -649,7 +642,7 @@ function Contact() {
             </div>
 
             {/* Social proof */}
-            <div className="mt-10 flex items-center gap-4 p-4" style={{ backgroundColor: `${C.gold}08`, border: `1px solid ${C.gold}15` }}>
+            <div className="mt-10 flex items-center gap-4 p-4" style={{ backgroundColor: `${C.gold}08`, border: `1px solid ${C.gold}15`, borderRadius: "12px" }}>
               <div className="flex -space-x-2">
                 {["P", "R", "A"].map((ch, i) => <span key={i} className="w-8 h-8 rounded-full flex items-center justify-center text-xs text-white" style={{ backgroundColor: C.charcoal, border: `2px solid ${C.warmWhite}` }}>{ch}</span>)}
               </div>
@@ -663,7 +656,7 @@ function Contact() {
 
         {/* Right - Form */}
         <Fade delay={.15}>
-          <form onSubmit={handle} className="p-8 md:p-10" style={{ backgroundColor: "#fff", boxShadow: "0 4px 30px rgba(0,0,0,.06)" }}>
+          <form onSubmit={handle} className="p-8 md:p-10" style={{ backgroundColor: "#fff", boxShadow: "0 4px 30px rgba(0,0,0,.06)", borderRadius: "20px" }}>
             <h3 className="text-xl mb-1" style={{ fontFamily: FONT_D, fontWeight: 600, color: C.charcoal }}>Request a Consultation</h3>
             <p className="mb-8 text-sm" style={{ color: C.textLight, fontFamily: FONT_B, fontWeight: 300 }}>We respond within 2 hours during business hours.</p>
 
@@ -681,7 +674,7 @@ function Contact() {
             </div>
             <div className="mb-6"><label style={lbl}>Message</label><textarea rows={4} style={{ ...inp, resize: "vertical" as const }} placeholder="Tell us about your project..." onFocus={e => (e.target.style.borderColor = C.gold)} onBlur={e => (e.target.style.borderColor = C.beige)} /></div>
 
-            <button type="submit" className="w-full py-4 text-sm tracking-wide transition-all hover:brightness-110 cursor-pointer" style={{ backgroundColor: C.gold, color: "#fff", fontFamily: FONT_B, fontWeight: 500, border: "none", boxShadow: `0 4px 20px ${C.gold}30` }}>
+            <button type="submit" className="w-full py-4 text-sm tracking-wide transition-all hover:brightness-110 cursor-pointer" style={{ backgroundColor: C.gold, color: "#fff", fontFamily: FONT_B, fontWeight: 500, border: "none", boxShadow: `0 4px 20px ${C.gold}30`, borderRadius: "10px" }}>
               {sent ? "Thank You! We'll Contact You Soon" : "Book Free Consultation"}
             </button>
           </form>
@@ -770,38 +763,7 @@ function Footer() {
   );
 }
 
-/* ═══════════════════════════════════════════════════════════════════
-   STICKY BUTTONS (WhatsApp + Book Consultation)
-   ═══════════════════════════════════════════════════════════════════ */
-function StickyButtons() {
-  const [vis, setVis] = useState(false);
-  useEffect(() => {
-    const fn = () => setVis(window.scrollY > 600);
-    window.addEventListener("scroll", fn, { passive: true });
-    return () => window.removeEventListener("scroll", fn);
-  }, []);
 
-  return (
-    <AnimatePresence>
-      {vis && (
-        <>
-          <motion.a href="https://wa.me/918919179795?text=Hi%20AptInterio%2C%20I%27m%20interested%20in%20interior%20design%20services." target="_blank" rel="noopener noreferrer"
-            initial={{ opacity: 0, scale: .8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: .8 }}
-            className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform" style={{ backgroundColor: "#25D366" }} aria-label="Contact AptInterio on WhatsApp">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" /></svg>
-          </motion.a>
-
-          <motion.a href="#contact" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 20 }}
-            className="fixed bottom-6 left-6 z-50 hidden sm:flex items-center gap-2 px-5 py-3 text-white text-sm tracking-wide shadow-2xl hover:brightness-110 transition-all"
-            style={{ backgroundColor: C.gold, fontFamily: FONT_B, fontWeight: 500, boxShadow: `0 8px 30px ${C.gold}40` }}>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M13.33 2H2.67A1.33 1.33 0 001.33 3.33v9.34A1.33 1.33 0 002.67 14h10.66a1.33 1.33 0 001.34-1.33V3.33A1.33 1.33 0 0013.33 2z" /><path d="M1.33 5.33h13.34M5.33 2v3.33M10.67 2v3.33" /></svg>
-            Book Consultation
-          </motion.a>
-        </>
-      )}
-    </AnimatePresence>
-  );
-}
 
 /* ═══════════════════════════════════════════════════════════════════
    APP
@@ -824,7 +786,6 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-      <StickyButtons />
     </div>
   );
 }
