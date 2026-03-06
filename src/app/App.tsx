@@ -2,7 +2,7 @@
 import { motion, useInView, AnimatePresence } from "motion/react";
 
 /* ── asset imports ──────────────────────────────────────────────── */
-import imgHero from "../assets/19e52514679c38b10f89483cc5299a1d19ce244f.png";
+import vidHero from "../assets/hero-video.mp4";
 import imgAbout from "../assets/e4de151ac4efb6a07b68e90aa765bd9ebc419311.png";
 import imgStatsBg from "../assets/b7ca9c77bb6f2ddc2b7d4136d174c207ab13233b.png";
 import imgCtaBg from "../assets/d070c4dadb305850a004723df09ec2548b5587f4.png";
@@ -166,44 +166,38 @@ function Navbar() {
 function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={imgHero} alt="Premium luxury interior design by AptInterio Hyderabad" className="w-full h-full object-cover" loading="eager" />
+      <div className="absolute inset-0 overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover origin-top scale-110"
+        >
+          <source src={vidHero} type="video/mp4" />
+        </video>
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg,rgba(26,26,26,.75),rgba(26,26,26,.40) 50%,rgba(26,26,26,.65))" }} />
       </div>
 
-      {/* Side scroll label */}
-      <div className="absolute left-10 top-1/2 -translate-y-1/2 hidden xl:flex flex-col items-center gap-4" aria-hidden="true">
-        <span className="w-px h-20" style={{ background: `linear-gradient(to bottom,transparent,${C.gold})` }} />
-        <span className="-rotate-90 text-[10px] tracking-[.3em] whitespace-nowrap" style={{ color: `${C.goldLight}60` }}>SCROLL</span>
-        <span className="w-px h-20" style={{ background: `linear-gradient(to bottom,${C.gold},transparent)` }} />
-      </div>
-
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .9, delay: .4 }} className="text-white mb-6" style={{ fontFamily: FONT_D, fontSize: "clamp(2.4rem,5.5vw,4.5rem)", lineHeight: 1.1, fontWeight: 400 }}>
-          Crafting Refined Interiors<br />for Modern{" "}
+      <div className="relative z-10 max-w-5xl mx-auto px-6 mt-16 sm:mt-0 text-center">
+        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .9, delay: .4 }} className="text-white mb-6" style={{ fontFamily: FONT_D, fontSize: "clamp(2rem,8vw,4.5rem)", lineHeight: 1.1, fontWeight: 400 }}>
+          Premium Interior Design<br />for Luxury{" "}
           <span className="relative inline-block" style={{ color: C.gold, fontStyle: "italic" }}>
-            Hyderabad
+            Kokapet
             <svg className="absolute -bottom-1 left-0 w-full" height="4" viewBox="0 0 200 4" preserveAspectRatio="none"><path d="M0 2Q50 0 100 2T200 2" stroke={C.gold} strokeWidth="1.5" fill="none" opacity=".5" /></svg>
           </span>{" "}Homes
         </motion.h1>
 
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .6 }} className="text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed" style={{ fontFamily: FONT_B, fontSize: "clamp(.95rem,1.5vw,1.1rem)", fontWeight: 300 }}>
-          Premium turnkey interior designer in Hyderabad delivering bespoke residential and commercial interiors across Kokapet, Gachibowli, Narsingi, Kollur, Tellapur and surrounding premium locations.
+        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .6 }} className="text-white/80 max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed" style={{ fontFamily: FONT_B, fontSize: "clamp(1rem,4vw,1.15rem)", fontWeight: 300 }}>
+          Transform your living spaces with bespoke, luxury turnkey interior styling. Expert interior designers serving Kokapet, Gachibowli, and the finest addresses in Hyderabad.
         </motion.p>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .8 }} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#contact" className="group inline-flex items-center gap-3 text-white px-8 py-4 text-sm tracking-wide hover:brightness-110 hover:shadow-xl transition-all" style={{ backgroundColor: C.gold, fontFamily: FONT_B, fontWeight: 500, boxShadow: `0 8px 30px ${C.gold}30`, borderRadius: "10px" }}>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .8, delay: .8 }} className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full px-2 sm:px-0">
+          <a href="#contact" className="w-full sm:w-auto group inline-flex items-center justify-center gap-3 text-white px-8 py-4 text-sm tracking-wide hover:brightness-110 hover:shadow-xl transition-all" style={{ backgroundColor: C.gold, fontFamily: FONT_B, fontWeight: 500, boxShadow: `0 8px 30px ${C.gold}30`, borderRadius: "10px" }}>
             Book a Consultation
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
           </a>
-          <a href="#projects" className="inline-flex items-center gap-3 text-white/90 px-8 py-4 text-sm tracking-wide hover:bg-white/10 backdrop-blur-sm transition-all" style={{ border: "1px solid rgba(255,255,255,.25)", fontFamily: FONT_B, borderRadius: "10px" }}>View Our Projects</a>
-        </motion.div>
-
-        {/* Scroll mouse */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 1 }} className="absolute bottom-10 left-1/2 -translate-x-1/2" aria-hidden="true">
-          <span className="w-5 h-9 border border-white/30 rounded-full flex items-start justify-center p-1.5 inline-flex">
-            <motion.span className="w-1 h-2 rounded-full" style={{ backgroundColor: C.gold }} animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} />
-          </span>
+          <a href="#projects" className="w-full sm:w-auto inline-flex items-center justify-center gap-3 text-white/90 px-8 py-4 text-sm tracking-wide hover:bg-white/10 backdrop-blur-sm transition-all" style={{ border: "1px solid rgba(255,255,255,.25)", fontFamily: FONT_B, borderRadius: "10px" }}>View Our Projects</a>
         </motion.div>
       </div>
     </section>
@@ -222,7 +216,7 @@ function WhyUs() {
   ];
 
   return (
-    <section className="py-24" style={{ backgroundColor: C.warmWhite }} id="why-us">
+    <section className="py-16 md:py-24" style={{ backgroundColor: C.warmWhite }} id="why-us">
       <div className="max-w-6xl mx-auto px-6">
         <Fade className="text-center mb-16">
           <Tag>Why AptInterio</Tag>
@@ -256,7 +250,7 @@ function About() {
   const caps = ["Residential Interiors", "Commercial Interiors", "3D & 2D Designing", "Turnkey Management"];
 
   return (
-    <section className="py-24" style={{ backgroundColor: C.cream }} id="about">
+    <section className="py-16 md:py-24" style={{ backgroundColor: C.cream }} id="about">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Image */}
@@ -326,7 +320,7 @@ function Stats() {
   ];
 
   return (
-    <section ref={ref} className="py-20 relative overflow-hidden">
+    <section ref={ref} className="py-16 md:py-20 relative overflow-hidden">
       <div className="absolute inset-0">
         <img src={imgStatsBg} alt="" className="w-full h-full object-cover" loading="lazy" aria-hidden="true" />
         <div className="absolute inset-0" style={{ backgroundColor: `${C.deep}ee` }} />
@@ -360,7 +354,7 @@ function Services() {
   ];
 
   return (
-    <section className="py-24 bg-white" id="services">
+    <section className="py-16 md:py-24 bg-white" id="services">
       <div className="max-w-6xl mx-auto px-6">
         <Fade className="text-center mb-16">
           <Tag>What We Offer</Tag>
@@ -405,7 +399,7 @@ function Projects() {
   const shown = f === "All" ? all : all.filter(p => p.tag === f);
 
   return (
-    <section className="py-24" style={{ backgroundColor: C.cream }} id="projects">
+    <section className="py-16 md:py-24" style={{ backgroundColor: C.cream }} id="projects">
       <div className="max-w-6xl mx-auto px-6">
         <Fade className="text-center mb-12">
           <Tag>Our Work</Tag>
@@ -450,7 +444,7 @@ function Projects() {
    ═══════════════════════════════════════════════════════════════════ */
 function Cta() {
   return (
-    <section className="relative py-28 overflow-hidden">
+    <section className="relative py-16 md:py-28 overflow-hidden">
       <div className="absolute inset-0">
         <img src={imgCtaBg} alt="" className="w-full h-full object-cover" loading="lazy" aria-hidden="true" />
         <div className="absolute inset-0" style={{ background: `linear-gradient(135deg,${C.deep}dd,${C.charcoal}cc)` }} />
@@ -484,7 +478,7 @@ function Testimonials() {
   ];
 
   return (
-    <section className="py-24 bg-white" id="testimonials">
+    <section className="py-16 md:py-24 bg-white" id="testimonials">
       <div className="max-w-6xl mx-auto px-6">
         <Fade className="text-center mb-16">
           <Tag>Client Stories</Tag>
@@ -523,7 +517,7 @@ function Locations() {
   const areas = ["Kokapet", "Gachibowli", "Narsingi", "Kollur", "Tellapur", "Manikonda", "Lingampally", "Alkapur Township"];
 
   return (
-    <section className="py-24" style={{ backgroundColor: C.deep }} id="locations">
+    <section className="py-16 md:py-24" style={{ backgroundColor: C.deep }} id="locations">
       <div className="max-w-6xl mx-auto px-6">
         <Fade className="text-center mb-14">
           <Tag>Locations We Serve</Tag>
@@ -566,7 +560,7 @@ function Blog() {
   ];
 
   return (
-    <section className="py-24" style={{ backgroundColor: C.cream }} id="blog">
+    <section className="py-16 md:py-24" style={{ backgroundColor: C.cream }} id="blog">
       <div className="max-w-6xl mx-auto px-6">
         <Fade className="text-center mb-14">
           <Tag>Insights &amp; Ideas</Tag>
@@ -612,7 +606,7 @@ function Contact() {
   const locs = ["Kokapet", "Gachibowli", "Narsingi", "Kollur", "Tellapur", "Manikonda", "Lingampally", "Alkapur Township", "Other"];
 
   return (
-    <section className="py-24" style={{ backgroundColor: C.warmWhite }} id="contact">
+    <section className="py-16 md:py-24" style={{ backgroundColor: C.warmWhite }} id="contact">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
         {/* Left */}
         <Fade>
@@ -703,7 +697,7 @@ function Footer() {
 
   return (
     <footer style={{ backgroundColor: C.deep }}>
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      <div className="max-w-6xl mx-auto px-6 py-10 md:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
           {/* Brand */}
           <div className="lg:col-span-2">
